@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('.search-button');
     
     // State
-    let currentPrompts = [...samplePrompts];
+    let currentPrompts = [...samplePrompts]; // Make sure samplePrompts is defined in data.js
     let activeFilter = 'All';
     let activeView = 'All Prompts';
     let currentSort = 'newest';
