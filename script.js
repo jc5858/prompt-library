@@ -1,8 +1,67 @@
+// Add sample prompts for testing
+function addSamplePrompts() {
+  // Only add samples if no prompts exist
+  if (getPrompts().length === 0) {
+    const samplePrompts = [
+      {
+        id: '1',
+        title: 'Website Redesign Expert',
+        content: 'Act as a senior UX designer with 15+ years of experience in conversion optimization. Review my website [URL] and suggest improvements focusing on: user flow, call-to-actions, visual hierarchy, and mobile responsiveness. Include specific examples and mockup descriptions.',
+        tags: ['Business', 'Design'],
+        favorite: false,
+        created: new Date().toISOString(),
+        lastModified: new Date().toISOString(),
+        useCount: 0
+      },
+      {
+        id: '2',
+        title: 'Python Debugging Assistant',
+        content: 'You are an expert Python developer with strong debugging skills. I\'ll share Python code that has bugs or isn\'t working as expected. Please:\n1. Identify all bugs and issues\n2. Explain why each is problematic\n3. Provide fixed code with comments\n4. Suggest best practices improvements\n\nHere\'s my code:\n```python\n[paste your code here]\n```',
+        tags: ['Coding', 'Python'],
+        favorite: false,
+        created: new Date().toISOString(),
+        lastModified: new Date().toISOString(),
+        useCount: 0
+      },
+      {
+        id: '3',
+        title: 'Creative Story Generator',
+        content: 'Write a captivating short story (800-1000 words) based on these parameters:\n\nGenre: [genre]\nMain character: [brief description]\nSetting: [place/time]\nTheme: [central theme]\nPlot element to include: [specific element]\nTone: [mood/tone]\n\nMake the story engaging with a clear beginning, middle, and end. Include vivid sensory details and meaningful dialogue. The ending should be [type of ending].',
+        tags: ['Creative', 'Writing'],
+        favorite: true,
+        created: new Date().toISOString(),
+        lastModified: new Date().toISOString(),
+        useCount: 0
+      }
+    ];
+    
+    localStorage.setItem('prompts', JSON.stringify(samplePrompts));
+    showNotification('Sample prompts added!');
+    loadPrompts();
+  }
+}
+
 // DOM Elements
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize the app
   loadPrompts();
   setupEventListeners();
+  
+  // Add "Add Sample Prompts" button if no prompts exist
+  if (getPrompts().length === 0) {
+    const sampleBtn = document.createElement('button');
+    sampleBtn.className = 'button secondary-button';
+    sampleBtn.textContent = 'Add Sample Prompts';
+    sampleBtn.style.margin = '0 auto';
+    sampleBtn.style.display = 'block';
+    
+    const noPromptsEl = document.querySelector('.no-prompts');
+    if (noPromptsEl) {
+      noPromptsEl.parentNode.insertBefore(sampleBtn, noPromptsEl.nextSibling);
+    }
+    
+    sampleBtn.addEventListener('click', addSamplePrompts);
+  }
 });
 
 // Load prompts from localStorage and display them
@@ -85,9 +144,11 @@ function setupEventListeners() {
   // Filter tags
   document.querySelectorAll('.filter-tag').forEach(tag => {
     tag.addEventListener('click', () => {
+      const tagText = tag.textContent.trim();
+      console.log('Filter clicked:', tagText); // Debug log
       document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
       tag.classList.add('active');
-      filterPrompts(tag.textContent);
+      filterPrompts(tagText);
     });
   });
   
@@ -120,6 +181,14 @@ function setupEventListeners() {
   // Sort select
   document.getElementById('sort-by').addEventListener('change', (e) => {
     sortPrompts(e.target.value);
+  });
+  
+  // Close modal on outside click
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('promptModal');
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 }
 
