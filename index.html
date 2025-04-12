@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptVault - Your Personal Prompt Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PromptVault</div>
+        <div class="tagline">Your Personal Prompt Library</div>
+    </header>
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search prompts...">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="filter-container">
+            <span class="filter-label">Filter:</span>
+            <span class="filter-tag active">All</span>
+            <span class="filter-tag">Writing</span>
+            <span class="filter-tag">Coding</span>
+            <span class="filter-tag">Creative</span>
+            <span class="filter-tag">Business</span>
+            <span class="filter-tag">Academic</span>
+            <span class="filter-tag">Marketing</span>
+            <span class="filter-tag">Research</span>
+            <span class="filter-tag">Design</span>
+        </div>
+        
+        <div class="view-controls">
+            <div class="view-tabs">
+                <div class="view-tab active">All Prompts</div>
+                <div class="view-tab">Favorites</div>
+            </div>
+            <div class="sort-control">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by" class="sort-select">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="a-z">A-Z</option>
+                    <option value="most-used">Most Used</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="prompt-grid">
+            <!-- Prompt cards will be dynamically generated here -->
+        </div>
+    </div>
+
+    <!-- Prompt Detail Modal -->
+    <div id="promptModal" class="modal">
+        <!-- Modal content will be dynamically generated -->
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 PromptVault | Your Personal Prompt Library</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
