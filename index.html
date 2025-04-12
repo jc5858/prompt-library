@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromptVault - Your Personal Prompt Library</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -16,7 +15,7 @@
     <div class="search-container">
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Search prompts...">
-            <button class="search-button"><i class="fas fa-search"></i> Search</button>
+            <button class="search-button">Search</button>
         </div>
         <div class="filter-container">
             <span class="filter-label">Filter:</span>
@@ -58,7 +57,7 @@
                         <span class="card-tag">Business</span>
                         <span class="card-tag">Design</span>
                     </div>
-                    <button class="favorite-button"><i class="far fa-star"></i></button>
+                    <button class="favorite-button">★</button>
                 </div>
                 <div class="card-content">
                     <p class="card-description">Perfect for getting detailed website redesign suggestions with a focus on UX and conversion optimization.</p>
@@ -74,7 +73,7 @@
                         <span class="card-tag">Coding</span>
                         <span class="card-tag">Python</span>
                     </div>
-                    <button class="favorite-button"><i class="far fa-star"></i></button>
+                    <button class="favorite-button">★</button>
                 </div>
                 <div class="card-content">
                     <p class="card-description">Helps identify and fix bugs in your Python code with clear explanations of the issues.</p>
@@ -99,7 +98,7 @@ Here's my code:
                         <span class="card-tag">Creative</span>
                         <span class="card-tag">Writing</span>
                     </div>
-                    <button class="favorite-button favorite-active"><i class="fas fa-star"></i></button>
+                    <button class="favorite-button active" style="color: #FFD700;">★</button>
                 </div>
                 <div class="card-content">
                     <p class="card-description">Generates imaginative short stories based on your inputs and preferences.</p>
@@ -124,7 +123,7 @@ Make the story engaging with a clear beginning, middle, and end. Include vivid s
                         <span class="card-tag">Academic</span>
                         <span class="card-tag">Research</span>
                     </div>
-                    <button class="favorite-button"><i class="far fa-star"></i></button>
+                    <button class="favorite-button">★</button>
                 </div>
                 <div class="card-content">
                     <p class="card-description">Helps organize research, structure papers, and formulate strong arguments for academic writing.</p>
@@ -148,7 +147,7 @@ My current approach is [brief description]. My deadline is [date].</div>
                         <span class="card-tag">Business</span>
                         <span class="card-tag">Marketing</span>
                     </div>
-                    <button class="favorite-button"><i class="far fa-star"></i></button>
+                    <button class="favorite-button">★</button>
                 </div>
                 <div class="card-content">
                     <p class="card-description">Creates compelling product descriptions that highlight benefits and features effectively.</p>
@@ -176,7 +175,7 @@ Create a description with:
                         <span class="card-tag">Coding</span>
                         <span class="card-tag">Best Practices</span>
                     </div>
-                    <button class="favorite-button favorite-active"><i class="fas fa-star"></i></button>
+                    <button class="favorite-button active" style="color: #FFD700;">★</button>
                 </div>
                 <div class="card-content">
                     <p class="card-description">Helps optimize and improve existing code for better performance and readability.</p>
@@ -203,7 +202,7 @@ Here's my code:
     <!-- Prompt Detail Modal -->
     <div id="promptModal" class="modal">
         <div class="modal-content">
-            <span class="close-button"><i class="fas fa-times"></i></span>
+            <span class="close-button">&times;</span>
             
             <div class="prompt-detail-header">
                 <h2 class="prompt-detail-title">Creative Story Generator</h2>
@@ -212,8 +211,8 @@ Here's my code:
                     <span class="prompt-detail-tag">Writing</span>
                 </div>
                 <div class="prompt-detail-meta">
-                    <span><i class="far fa-calendar-alt"></i> Added: April 10, 2025</span>
-                    <span><i class="fas fa-history"></i> Used: 18 times</span>
+                    <span>Added: April 10, 2025</span>
+                    <span>Used: 18 times</span>
                 </div>
             </div>
             
@@ -234,16 +233,13 @@ Tone: [mood/tone]
 Make the story engaging with a clear beginning, middle, and end. Include vivid sensory details and meaningful dialogue. The ending should be [type of ending].</div>
             
             <div class="prompt-detail-buttons">
-                <button class="button primary-button"><i class="far fa-copy"></i> Copy Prompt</button>
-                <button class="button secondary-button"><i class="far fa-edit"></i> Edit</button>
-                <button class="button secondary-button"><i class="far fa-trash-alt"></i> Delete</button>
-                <button class="button secondary-button favorite-detail"><i class="fas fa-star"></i> Favorite</button>
+                <button class="button primary-button">Copy Prompt</button>
+                <button class="button secondary-button">Edit</button>
+                <button class="button secondary-button">Delete</button>
+                <button class="button secondary-button favorite-detail">★ Favorite</button>
             </div>
         </div>
     </div>
-
-    <!-- Add New Prompt Button (Fixed) -->
-    <button class="add-prompt-button"><i class="fas fa-plus"></i></button>
 
     <footer class="footer">
         <p>&copy; 2025 PromptVault | Your Personal Prompt Library</p>
