@@ -1,3 +1,10 @@
+/**
+ * PromptVault - Phase 1
+ * Basic static site with minimal interactivity
+ * This is the first phase implementation with UI interactions only
+ * Future phases will add data persistence and CRUD operations
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const modal = document.getElementById('promptModal');
@@ -138,6 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (starIcon.classList.contains('far')) {
             starIcon.classList.remove('far');
             starIcon.classList.add('fas');
+            favoriteDetailButton.innerHTML = '<i class="fas fa-star"></i> Favorited';
         } else {
             starIcon.classList.remove('fas');
-            star
+            starIcon.classList.add('far');
+            favoriteDetailButton.innerHTML = '<i class="far fa-star"></i> Favorite';
+        }
+    });
