@@ -58,8 +58,9 @@ function setupEventListeners() {
   // New prompt button
   const newPromptBtn = document.createElement('button');
   newPromptBtn.className = 'button primary-button new-prompt-btn';
-  newPromptBtn.textContent = 'New Prompt';
-  document.querySelector('.search-container').appendChild(newPromptBtn);
+  newPromptBtn.textContent = '+';
+  newPromptBtn.title = 'Create New Prompt';
+  document.body.appendChild(newPromptBtn);
   
   newPromptBtn.addEventListener('click', () => {
     showPromptForm();
@@ -79,11 +80,6 @@ function setupEventListeners() {
     
     // Otherwise show prompt details
     showPromptDetails(card.dataset.id);
-  });
-  
-  // Modal close button
-  document.querySelector('.close-button').addEventListener('click', () => {
-    closeModal();
   });
   
   // Filter tags
@@ -119,6 +115,11 @@ function setupEventListeners() {
       const searchTerm = document.querySelector('.search-input').value;
       searchPrompts(searchTerm);
     }
+  });
+  
+  // Sort select
+  document.getElementById('sort-by').addEventListener('change', (e) => {
+    sortPrompts(e.target.value);
   });
 }
 
@@ -179,6 +180,13 @@ function showPromptForm(promptId = null) {
   document.querySelector('.close-button').addEventListener('click', () => {
     closeModal();
   });
+  
+  // Close on outside click
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
 }
 
 // Show prompt details
@@ -223,6 +231,13 @@ function showPromptDetails(id) {
   // Close button
   document.querySelector('.close-button').addEventListener('click', () => {
     closeModal();
+  });
+  
+  // Close on outside click
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 }
 
@@ -307,6 +322,7 @@ function toggleFavorite(id) {
     prompts[index].favorite = !prompts[index].favorite;
     localStorage.setItem('prompts', JSON.stringify(prompts));
     loadPrompts();
+    showNotification(prompts[index].favorite ? 'Added to favorites!' : 'Removed from favorites!');
   }
 }
 
@@ -382,22 +398,34 @@ function searchPrompts(term) {
   });
 }
 
-// Show notification
-function showNotification(message) {
-  const notification = document.createElement('div');
-  notification.className = 'notification';
-  notification.textContent = message;
+// Sort prompts
+function sortPrompts(sortBy) {
+  const prompts = getPrompts();
+  const promptGrid = document.querySelector('.prompt-grid');
+  promptGrid.innerHTML = '';
   
-  document.body.appendChild(notification);
+  let sortedPrompts = [...prompts];
   
-  setTimeout(() => {
-    notification.classList.add('show');
-  }, 10);
+  switch(sortBy) {
+    case 'newest':
+      sortedPrompts.sort((a, b) => new Date(b.created) - new Date(a.created));
+      break;
+    case 'oldest':
+      sortedPrompts.sort((a, b) => new Date(a.created) - new Date(b.created));
+      break;
+    case 'a-z':
+      sortedPrompts.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case 'most-used':
+      sortedPrompts.sort((a, b) => b.useCount - a.useCount);
+      break;
+  }
   
-  setTimeout(() => {
-    notification.classList.remove('show');
-    setTimeout(() => {
-      notification.remove();
-    }, 300);
-  }, 3000);
+  sortedPrompts.forEach(prompt => {
+    const card = createPromptCard(prompt);
+    promptGrid.appendChild(card);
+  });
 }
+
+// Show notification
+function showNotification(message
