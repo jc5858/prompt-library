@@ -20,14 +20,7 @@
         <div class="filter-container">
             <span class="filter-label">Filter:</span>
             <span class="filter-tag active">All</span>
-            <span class="filter-tag">Writing</span>
-            <span class="filter-tag">Coding</span>
-            <span class="filter-tag">Creative</span>
-            <span class="filter-tag">Business</span>
-            <span class="filter-tag">Academic</span>
-            <span class="filter-tag">Marketing</span>
-            <span class="filter-tag">Research</span>
-            <span class="filter-tag">Design</span>
+            <!-- Other tags will be generated dynamically by JavaScript -->
         </div>
         
         <div class="view-controls">
@@ -49,153 +42,7 @@
 
     <div class="main-container">
         <div class="prompt-grid">
-            <!-- Prompt Card 1 -->
-            <div class="prompt-card">
-                <div class="card-header">
-                    <h3 class="card-title">Website Redesign Expert</h3>
-                    <div class="card-tags">
-                        <span class="card-tag">Business</span>
-                        <span class="card-tag">Design</span>
-                    </div>
-                    <button class="favorite-button">★</button>
-                </div>
-                <div class="card-content">
-                    <p class="card-description">Perfect for getting detailed website redesign suggestions with a focus on UX and conversion optimization.</p>
-                    <div class="card-preview">Act as a senior UX designer with 15+ years of experience in conversion optimization. Review my website [URL] and suggest improvements focusing on: user flow, call-to-actions, visual hierarchy, and mobile responsiveness. Include specific examples and mockup descriptions.</div>
-                </div>
-            </div>
-
-            <!-- Prompt Card 2 -->
-            <div class="prompt-card">
-                <div class="card-header">
-                    <h3 class="card-title">Python Debugging Assistant</h3>
-                    <div class="card-tags">
-                        <span class="card-tag">Coding</span>
-                        <span class="card-tag">Python</span>
-                    </div>
-                    <button class="favorite-button">★</button>
-                </div>
-                <div class="card-content">
-                    <p class="card-description">Helps identify and fix bugs in your Python code with clear explanations of the issues.</p>
-                    <div class="card-preview">You are an expert Python developer with strong debugging skills. I'll share Python code that has bugs or isn't working as expected. Please:
-1. Identify all bugs and issues
-2. Explain why each is problematic
-3. Provide fixed code with comments
-4. Suggest best practices improvements
-
-Here's my code:
-```python
-[paste your code here]
-```</div>
-                </div>
-            </div>
-
-            <!-- Prompt Card 3 -->
-            <div class="prompt-card">
-                <div class="card-header">
-                    <h3 class="card-title">Creative Story Generator</h3>
-                    <div class="card-tags">
-                        <span class="card-tag">Creative</span>
-                        <span class="card-tag">Writing</span>
-                    </div>
-                    <button class="favorite-button active" style="color: #FFD700;">★</button>
-                </div>
-                <div class="card-content">
-                    <p class="card-description">Generates imaginative short stories based on your inputs and preferences.</p>
-                    <div class="card-preview">Write a captivating short story (800-1000 words) based on these parameters:
-
-Genre: [genre]
-Main character: [brief description]
-Setting: [place/time]
-Theme: [central theme]
-Plot element to include: [specific element]
-Tone: [mood/tone]
-
-Make the story engaging with a clear beginning, middle, and end. Include vivid sensory details and meaningful dialogue. The ending should be [type of ending].</div>
-                </div>
-            </div>
-
-            <!-- Prompt Card 4 -->
-            <div class="prompt-card">
-                <div class="card-header">
-                    <h3 class="card-title">Academic Research Helper</h3>
-                    <div class="card-tags">
-                        <span class="card-tag">Academic</span>
-                        <span class="card-tag">Research</span>
-                    </div>
-                    <button class="favorite-button">★</button>
-                </div>
-                <div class="card-content">
-                    <p class="card-description">Helps organize research, structure papers, and formulate strong arguments for academic writing.</p>
-                    <div class="card-preview">As an experienced academic research assistant, help me organize my research on [topic]. I need assistance with:
-
-1. Creating a structured outline for a [length] paper
-2. Identifying key areas to focus my research
-3. Formulating a strong thesis statement
-4. Suggesting how to approach the literature review
-5. Developing compelling arguments
-
-My current approach is [brief description]. My deadline is [date].</div>
-                </div>
-            </div>
-
-            <!-- Prompt Card 5 -->
-            <div class="prompt-card">
-                <div class="card-header">
-                    <h3 class="card-title">Product Description Writer</h3>
-                    <div class="card-tags">
-                        <span class="card-tag">Business</span>
-                        <span class="card-tag">Marketing</span>
-                    </div>
-                    <button class="favorite-button">★</button>
-                </div>
-                <div class="card-content">
-                    <p class="card-description">Creates compelling product descriptions that highlight benefits and features effectively.</p>
-                    <div class="card-preview">Act as an expert e-commerce copywriter. Write a compelling product description for [product name] with these details:
-
-Product: [basic details]
-Key features: [list 3-5 features]
-Target audience: [demographic]
-Price point: [price range]
-Brand voice: [tone/style]
-
-Create a description with:
-- An attention-grabbing headline
-- 3-4 paragraphs of persuasive copy (150-200 words total)
-- Bullet points highlighting key features and benefits
-- A clear call-to-action</div>
-                </div>
-            </div>
-
-            <!-- Prompt Card 6 -->
-            <div class="prompt-card">
-                <div class="card-header">
-                    <h3 class="card-title">Code Refactoring Guide</h3>
-                    <div class="card-tags">
-                        <span class="card-tag">Coding</span>
-                        <span class="card-tag">Best Practices</span>
-                    </div>
-                    <button class="favorite-button active" style="color: #FFD700;">★</button>
-                </div>
-                <div class="card-content">
-                    <p class="card-description">Helps optimize and improve existing code for better performance and readability.</p>
-                    <div class="card-preview">You are a senior software engineer with expertise in clean code and refactoring. Review my [language] code below and:
-
-1. Identify code smells and potential issues
-2. Suggest refactoring strategies to improve:
-   - Readability
-   - Maintainability
-   - Performance
-   - Test coverage opportunities
-3. Provide refactored code examples with explanations
-4. Recommend design patterns if applicable
-
-Here's my code:
-```
-[paste code here]
-```</div>
-                </div>
-            </div>
+            <!-- Prompt cards will be generated dynamically by JavaScript -->
         </div>
     </div>
 
@@ -205,38 +52,27 @@ Here's my code:
             <span class="close-button">&times;</span>
             
             <div class="prompt-detail-header">
-                <h2 class="prompt-detail-title">Creative Story Generator</h2>
+                <h2 class="prompt-detail-title">Prompt Title</h2>
                 <div class="prompt-detail-tags">
-                    <span class="prompt-detail-tag">Creative</span>
-                    <span class="prompt-detail-tag">Writing</span>
+                    <!-- Tags will be generated dynamically by JavaScript -->
                 </div>
                 <div class="prompt-detail-meta">
-                    <span>Added: April 10, 2025</span>
-                    <span>Used: 18 times</span>
+                    <span>Added: Date</span>
+                    <span>Used: 0 times</span>
                 </div>
             </div>
             
             <div class="prompt-detail-description">
-                <p>This prompt is designed to generate creative short stories based on your specific parameters. It works best when you provide detailed inputs for each parameter. The AI will create a structured narrative with character development, plot progression, and thematic elements.</p>
-                <p>You can modify any of the parameters to suit your preferences or specific writing needs. For best results, be specific about the genre and tone you want.</p>
+                <p>Prompt description will go here.</p>
             </div>
             
-            <div class="prompt-detail-content">Write a captivating short story (800-1000 words) based on these parameters:
-
-Genre: [genre]
-Main character: [brief description]
-Setting: [place/time]
-Theme: [central theme]
-Plot element to include: [specific element]
-Tone: [mood/tone]
-
-Make the story engaging with a clear beginning, middle, and end. Include vivid sensory details and meaningful dialogue. The ending should be [type of ending].</div>
+            <div class="prompt-detail-content">Prompt content will go here.</div>
             
             <div class="prompt-detail-buttons">
                 <button class="button primary-button">Copy Prompt</button>
                 <button class="button secondary-button">Edit</button>
                 <button class="button secondary-button">Delete</button>
-                <button class="button secondary-button favorite-detail">★ Favorite</button>
+                <button class="button secondary-button favorite-detail">☆ Add to Favorites</button>
             </div>
         </div>
     </div>
@@ -245,6 +81,7 @@ Make the story engaging with a clear beginning, middle, and end. Include vivid s
         <p>&copy; 2025 PromptVault | Your Personal Prompt Library</p>
     </footer>
 
+    <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
